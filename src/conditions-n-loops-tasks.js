@@ -21,8 +21,8 @@
  *  0  => true
  *  -5 => false
  */
-function isPositive(/* number */) {
-  throw new Error('Not implemented');
+function isPositive(number) {
+  return number > 0 || number === 0;
 }
 
 /**
@@ -38,8 +38,10 @@ function isPositive(/* number */) {
  *  -5, 0, 5      => 5
  *  -0.1, 0, 0.2  => 0.2
  */
-function getMaxNumber(/* a, b, c */) {
-  throw new Error('Not implemented');
+function getMaxNumber(a, b, c) {
+  let max = a > b ? a : b;
+  max = c > max ? c : max;
+  return max;
 }
 
 /**
@@ -60,8 +62,14 @@ function getMaxNumber(/* a, b, c */) {
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  * {x: 1, y: 1}, {x: 2, y: 8} => false
  */
-function canQueenCaptureKing(/* queen, king */) {
-  throw new Error('Not implemented');
+function canQueenCaptureKing(queen, king) {
+  let answer;
+  if (queen.x === king.x || queen.y === king.y) {
+    answer = true;
+  } else if (Math.abs(queen.x - king.x) === Math.abs(queen.y - king.y)) {
+    answer = true;
+  } else answer = false;
+  return answer;
 }
 
 /**
