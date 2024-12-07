@@ -112,8 +112,48 @@ function isIsoscelesTriangle(a, b, c) {
  *  10  => X
  *  26  => XXVI
  */
-function convertToRomanNumerals(/* num */) {
-  throw new Error('Not implemented');
+function convertToRomanNumerals(num) {
+  let result = '';
+  if (num === 1) result = 'I';
+  if (num === 2) result = 'II';
+  if (num === 3) result = 'III';
+  if (num === 4) result = 'IV';
+  if (num === 5) result = 'V';
+  if (num === 6) result = 'VI';
+  if (num === 7) result = 'VII';
+  if (num === 8) result = 'VIII';
+  if (num === 9) result = 'IX';
+  if (num === 10) result = 'X';
+  if (num === 11) result = 'XI';
+  if (num === 12) result = 'XII';
+  if (num === 13) result = 'XIII';
+  if (num === 14) result = 'XIV';
+  if (num === 15) result = 'XV';
+  if (num === 16) result = 'XVI';
+  if (num === 17) result = 'XVII';
+  if (num === 18) result = 'XVIII';
+  if (num === 19) result = 'XIX';
+  if (num === 20) result = 'XX';
+  if (num === 21) result = 'XXI';
+  if (num === 22) result = 'XXII';
+  if (num === 23) result = 'XXIII';
+  if (num === 24) result = 'XXIV';
+  if (num === 25) result = 'XXV';
+  if (num === 26) result = 'XXVI';
+  if (num === 27) result = 'XXVII';
+  if (num === 28) result = 'XXVIII';
+  if (num === 29) result = 'XXIX';
+  if (num === 30) result = 'XXX';
+  if (num === 31) result = 'XXXI';
+  if (num === 32) result = 'XXXII';
+  if (num === 33) result = 'XXXIII';
+  if (num === 34) result = 'XXXIV';
+  if (num === 35) result = 'XXXV';
+  if (num === 36) result = 'XXXVI';
+  if (num === 37) result = 'XXXVII';
+  if (num === 38) result = 'XXXVIII';
+  if (num === 39) result = 'XXXIX';
+  return result;
 }
 
 /**
@@ -131,8 +171,97 @@ function convertToRomanNumerals(/* num */) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let result = '';
+  for (let i = 0; i < numberStr.length - 1; i += 1) {
+    switch (numberStr[i]) {
+      case '-':
+        result += 'minus ';
+        break;
+      case '.':
+        result += 'point ';
+        break;
+      case ',':
+        result += 'point ';
+        break;
+      case '0':
+        result += 'zero ';
+        break;
+      case '1':
+        result += 'one ';
+        break;
+      case '2':
+        result += 'two ';
+        break;
+      case '3':
+        result += 'three ';
+        break;
+      case '4':
+        result += 'four ';
+        break;
+      case '5':
+        result += 'five ';
+        break;
+      case '6':
+        result += 'six ';
+        break;
+      case '7':
+        result += 'seven ';
+        break;
+      case '8':
+        result += 'eight ';
+        break;
+      case '9':
+        result += 'nine ';
+        break;
+      default:
+        break;
+    }
+  }
+  switch (numberStr[numberStr.length - 1]) {
+    case '-':
+      result += 'minus';
+      break;
+    case '.':
+      result += 'point';
+      break;
+    case ',':
+      result += 'point';
+      break;
+    case '0':
+      result += 'zero';
+      break;
+    case '1':
+      result += 'one';
+      break;
+    case '2':
+      result += 'two';
+      break;
+    case '3':
+      result += 'three';
+      break;
+    case '4':
+      result += 'four';
+      break;
+    case '5':
+      result += 'five';
+      break;
+    case '6':
+      result += 'six';
+      break;
+    case '7':
+      result += 'seven';
+      break;
+    case '8':
+      result += 'eight';
+      break;
+    case '9':
+      result += 'nine';
+      break;
+    default:
+      break;
+  }
+  return result;
 }
 
 /**
