@@ -619,7 +619,7 @@ describe('core-js-conditions-n-loops optimal implementation', () => {
 
   it.optional('speed test of sortByAsc', function test() {
     this.slow(25);
-    this.timeout(100);
+    this.timeout(35);
     tasks.sortByAsc(notSortedArr);
     assert.deepEqual(notSortedArr, sortedArr);
   });
