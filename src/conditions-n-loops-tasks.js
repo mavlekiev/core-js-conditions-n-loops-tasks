@@ -511,6 +511,7 @@ function sortByAsc(arr) {
  *  'qwerty', 3 => 'qetwry' => 'qtrewy' => 'qrwtey'
  */
 function shuffleChar(str, iterations) {
+  if (iterations % 6 === 0) return str;
   let iter = iterations;
   let str1 = str;
   do {
@@ -521,8 +522,10 @@ function shuffleChar(str, iterations) {
       str3 += str1[i - 1];
     }
     str1 = str3 + str2;
-    iter -= 1;
-  } while (iter !== 0 && iterations % 4 !== 0);
+    if (str1 === str) {
+      iter = iterations % (iterations - iter + 1);
+    } else iter -= 1;
+  } while (iter !== 0);
   return str1;
 }
 
