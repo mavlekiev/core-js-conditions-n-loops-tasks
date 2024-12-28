@@ -549,7 +549,6 @@ function shuffleChar(str, iterations) {
 function getNearestBigger(number) {
   const numArr = Array.from(String(number), Number);
 
-  // Find the index where a smaller number appears before a larger number
   let index = -1;
   for (let i = numArr.length - 1; i > 0; i -= 1) {
     if (numArr[i] > numArr[i - 1]) {
@@ -558,12 +557,10 @@ function getNearestBigger(number) {
     }
   }
 
-  // If no such index is found, return the original number
   if (index === -1) {
     return number;
   }
 
-  // Find the smallest number to the right of index that is greater than the number at index
   let minIndex = index + 1;
   for (let i = minIndex + 1; i < numArr.length; i += 1) {
     if (numArr[i] > numArr[index] && numArr[i] < numArr[minIndex]) {
@@ -571,21 +568,22 @@ function getNearestBigger(number) {
     }
   }
 
-  // Swap the numbers at index and minIndex
   const temp = numArr[index];
   numArr[index] = numArr[minIndex];
   numArr[minIndex] = temp;
 
-  // Sort the numbers to the right of index in ascending order
-  const subArr = numArr.slice(index + 1).sort((a, b) => a - b);
+  for (let i = index + 1; i < numArr.length - 1; i += 1) {
+    for (let j = i + 1; j < numArr.length; j += 1) {
+      if (numArr[i] > numArr[j]) {
+        const buf = numArr[i];
+        numArr[i] = numArr[j];
+        numArr[j] = buf;
+      }
+    }
+  }
 
-  // Combine the left, swapped, and sorted right parts to form the nearest larger number
-  const result = Number(
-    numArr
-      .slice(0, index + 1)
-      .concat(subArr)
-      .join('')
-  );
+  const result = Number(numArr.join(''));
+
   return result;
 }
 
